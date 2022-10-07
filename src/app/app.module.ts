@@ -1,15 +1,17 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+
 import { StockSymbolSearchComponent } from './stock-symbol-search/stock-symbol-search.component';
-import { FormsModule } from '@angular/forms';
+
 import { NotifierModule, NotifierOptions } from 'angular-notifier';
 const customNotifierOptions: NotifierOptions = {
   position: {
 		horizontal: {
-			position: 'left',
+			position: 'middle',
 			distance: 12
 		},
 		vertical: {
