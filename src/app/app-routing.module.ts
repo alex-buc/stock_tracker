@@ -5,7 +5,7 @@ import { SentimentComponent } from './sentiment/sentiment.component';
 
 const routes: Routes = [
   { path: "sentiment/:symbol",component:SentimentComponent},
-  { path: "stoks",component:StockComponent},
+  { path: "stocks",component:StockComponent},
   { path:"**", component: StockComponent }
 ];
 
