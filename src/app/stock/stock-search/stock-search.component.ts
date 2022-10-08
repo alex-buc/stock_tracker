@@ -11,7 +11,7 @@ import { FinnhubStockService } from '../shared/finnhub-stock.service'
 })
 export class StockSearchComponent implements OnInit {
 
-  public Symbol:string = "";
+  public symbol:string = "";
   
   apiUrlName = ""
 
@@ -26,7 +26,7 @@ export class StockSearchComponent implements OnInit {
 
   public getStackBySymbol(){
     this.finnhubStockService
-        .getStockInfoBySymbol(this.Symbol)
+        .getStockInfoBySymbol(this.symbol)
         .subscribe(data=>{
             let notificationMsjType = 'false';
             let msj = '';
@@ -41,7 +41,7 @@ export class StockSearchComponent implements OnInit {
 
               if(isValueSet){
                 notificationMsjType = 'success';
-                msj = `Data successfuly retrived for ${this.Symbol}`;
+                msj = `Data successfuly retrived for ${this.symbol}`;
               }
             }
             this.notificationService.notify(notificationMsjType, msj);

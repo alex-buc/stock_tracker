@@ -1,0 +1,31 @@
+<div class="card center bg-secondary">
+  <div *ngIf="sentiments.length<=0" class="card-item">
+    No data to display
+  </div>
+    <div class="card-item">
+      <div class="hstack">
+        <div class="item" *ngFor="let sentiment of sentiments;let idx=index">
+
+          <div class="card" >
+            <div class="card-body principale">
+              <h6 class="card-subtitle text-muted">
+                {{getMonthFromInt(sentiment.month)}} 
+                <i *ngIf="sentiment.change>=0" class="bi bi-graph-up-arrow big text-success"></i>
+                <i *ngIf="sentiment.change<0" class="bi bi-graph-down-arrow big text-danger"></i>
+              </h6>
+              <div class="card-text">
+                Change: {{sentiment.change}}
+              </div>
+              <div class="card-text">
+                MSPR:  {{sentiment.mspr}}
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div class="card-action">
+        <a routerLink="/stoks"><i class="bi bi-chevron-double-left"></i> Back to list of stocks</a>
+      </div>
+    </div>
+</div>

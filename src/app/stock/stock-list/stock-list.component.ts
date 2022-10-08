@@ -10,16 +10,16 @@ import { StockModel } from '../shared/stock.model';
 })
 export class StockListComponent implements OnInit {
 
-  public Stocks: StockModel[] = [];
+  public stocks: StockModel[] = [];
   constructor(
     private localStorageService:LocalStorageService,
     private notificationService: NotifierService,
   ) { }
 
   ngOnInit(): void {
-    this.Stocks = this.localStorageService.get();
+    this.stocks = this.localStorageService.get();
     this.localStorageService.changes$.subscribe((data:any)=>{
-      this.Stocks = data;
+      this.stocks = data;
     });
   }
   

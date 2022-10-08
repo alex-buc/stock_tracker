@@ -1,5 +1,8 @@
 <div class="card center bg-secondary">
-  <div class="card-item" *ngFor="let stock of Stocks">
+  <div *ngIf="stocks.length<=0" class="card-item">
+    No data to display
+  </div>
+  <div class="card-item" *ngFor="let stock of stocks">
     <div class="card-action"><a (click)="removeStock(stock.symbol)"><i class="bi bi-x-circle"></i></a></div>
     <div class="hstack">
       <stock-info [data]="stock.info" class='item'></stock-info>
@@ -9,7 +12,7 @@
       <stock-change [data]="stock.quote" class="item"></stock-change>
     </div>
     <div class="card-action">
-      <a>Go to social sentiment details <i class="bi bi-chevron-double-right"></i></a>
+      <a [routerLink]="['/sentiment',stock.symbol]">Go to social sentiment details <i class="bi bi-chevron-double-right"></i></a>
     </div>
   </div>
 </div>
