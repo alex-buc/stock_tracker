@@ -1,0 +1,15 @@
+<div class="card">
+    <div class="card-body">
+        <h6 class="card-subtitle text-muted">
+          Change
+          <i *ngIf="data.percentChange>=0" class="bi bi-graph-up-arrow big text-success"></i>
+          <i *ngIf="data.percentChange<0" class="bi bi-graph-down-arrow big text-danger"></i>
+        </h6>
+        <div class="card-text">
+          Procentage: {{data.percentChange}}
+        </div>
+        <div class="card-text">
+         Value: {{data.change}} 
+        </div>
+      </div>
+</div>

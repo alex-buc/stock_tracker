@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { StockSymbolSearchComponent } from './stock-symbol-search.component';
+import { StockSearchComponent } from './stock-search.component';
 
-describe('StockSymbolSearchComponent', () => {
-  let component: StockSymbolSearchComponent;
-  let fixture: ComponentFixture<StockSymbolSearchComponent>;
+describe('StockSearchComponent', () => {
+  let component: StockSearchComponent;
+  let fixture: ComponentFixture<StockSearchComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ StockSymbolSearchComponent ]
+      declarations: [ StockSearchComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(StockSymbolSearchComponent);
+    fixture = TestBed.createComponent(StockSearchComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

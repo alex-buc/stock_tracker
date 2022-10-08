@@ -1,0 +1,28 @@
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+}
+
+.card-item {
+    background-color:white;
+    margin:2rem;
+    text-align: center;
+    align-items: center;
+    border-radius: 0.2rem;
+}
+.card-action {
+    text-align: right;
+    padding:1rem;
+    border-top:solid 0.5rem #c0c0c070;
+    border-bottom:solid 0.5rem #c0c0c070
+}
+
+.item {
+    width:33%;
+}
+.vr-blurry {
+    background:linear-gradient(to bottom, transparent 5%, #f3f3f3 30%, gray 70%, #f3f3f3 80%, transparent 100%);
+    width:0.2rem;
+}

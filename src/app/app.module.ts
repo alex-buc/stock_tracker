@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-
-import { StockSymbolSearchComponent } from './stock-symbol-search/stock-symbol-search.component';
+import { StockModule } from './stock/stock.module';
+import { SentimentModule } from './sentiment/sentiment.module'
 
 import { NotifierModule, NotifierOptions } from 'angular-notifier';
 const customNotifierOptions: NotifierOptions = {
@@ -50,14 +50,16 @@ const customNotifierOptions: NotifierOptions = {
 };
 @NgModule({
   declarations: [
-    AppComponent,
-    StockSymbolSearchComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule,
+    AppRoutingModule,
+    
+    StockModule,
+    SentimentModule,
+
     NotifierModule.withConfig(customNotifierOptions),
-    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

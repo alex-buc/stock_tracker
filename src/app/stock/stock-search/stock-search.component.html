@@ -2,8 +2,8 @@
     <div class="card-body">
         <p class="card-text">Enter the simbol of a stack to track <span class="info">(i.e. AAPL, TSLA, GOOGL)</span></p>
         <div class="input-group">
-            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg" [(ngModel)]="Symbol">
-            <button class="btn btn-dark" (click)="getStackBySymbol()">Search</button>
+            <input id="stockInput" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg" [(ngModel)]="Symbol">
+            <button id="trackBtn" class="btn btn-dark" (click)="getStackBySymbol()">Search</button>
         </div>
     </div>
 </div>
