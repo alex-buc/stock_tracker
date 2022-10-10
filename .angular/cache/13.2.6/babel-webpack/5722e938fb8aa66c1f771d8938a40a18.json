@@ -1,1 +1,0 @@
-{"ast":null,"code":"/**\n * @fileoverview added by tsickle\n * @suppress {checkTypes} checked by tsc\n */\nexport { NotifierModule } from './src/notifier.module';\nexport { NotifierService } from './src/services/notifier.service'; //# sourceMappingURL=index.js.map","map":null,"metadata":{},"sourceType":"module"}
