@@ -18,7 +18,7 @@ export class StockListComponent implements OnInit {
 
   ngOnInit(): void {
     this.stocks = this.localStorageService.get();
-    this.localStorageService.changes$.subscribe((data:any)=>{
+    this.localStorageService.changes$.subscribe((data:StockModel[])=>{
       this.stocks = data;
     });
   }
