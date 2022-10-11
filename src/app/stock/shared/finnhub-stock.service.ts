@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, map, forkJoin } from 'rxjs';
-import {StockModel} from './stock.model'
+import {StockModel, StockQuoteModelResult, StockInfoModelResult} from './stock.model'
 
 @Injectable({
   providedIn: 'root'
@@ -9,10 +9,10 @@ import {StockModel} from './stock.model'
 export class FinnhubStockService {
   constructor(private httpClient:HttpClient) { }
 
-  public getStockInfoBySymbol(symbol:string):Observable<any> {
-    let quote = this.httpClient.get(
+  public getStockInfoBySymbol(symbol:string):Observable<StockModel> {
+    let quote = this.httpClient.get<StockQuoteModelResult>(
       `https://finnhub.io/api/v1/quote?symbol=${symbol}&token=bu4f8kn48v6uehqi3cqg`
-    ).pipe(map((data:any)=>{
+    ).pipe(map((data)=>{
         return {
           currentPrice:data.c,
           change:data.d,
@@ -24,9 +24,9 @@ export class FinnhubStockService {
         }
     }));
 
-    let stockInfo = this.httpClient.get(
+    let stockInfo = this.httpClient.get<StockInfoModelResult>(
       `https://finnhub.io/api/v1/search?q=${symbol}&token=bu4f8kn48v6uehqi3cqg`
-    ).pipe(map((data:any)=>{
+    ).pipe(map((data)=>{
       if(data.count && data.count>0) 
         return data.result[0];
       else
@@ -37,7 +37,7 @@ export class FinnhubStockService {
       if(!results[0]){
         return {
           error:"Something went worng!"
-        };
+        } as StockModel;
       }
       else
         return {

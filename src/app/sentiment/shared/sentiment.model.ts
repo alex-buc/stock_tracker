@@ -5,3 +5,7 @@ export interface SentimentModel {
     "change":number,
     "mspr":number
 }
+
+export interface StockModelResult {
+    data:Array<SentimentModel>
+}
