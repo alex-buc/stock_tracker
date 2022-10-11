@@ -26,7 +26,7 @@ export class LocalStorageService {
   set(value: StockModel): boolean {
     if (this.isLocalStorageSupported) {
       let data = this.get()??[] as StockModel[];
-      data = data.filter((elem:any) => elem.symbol != value.symbol);
+      data = data.filter((elem:StockModel) => elem.symbol != value.symbol);
       data.push(value);
       this.localStorage.setItem(this.key, JSON.stringify(data));
       this.changes$.next(data);
@@ -37,7 +37,7 @@ export class LocalStorageService {
   remove(symbol:string):boolean {
     if(this.isLocalStorageSupported) {
       let data = this.get()??[] as StockModel[];
-      data = data.filter((elem:any) => elem.symbol != symbol);
+      data = data.filter((elem:StockModel) => elem.symbol != symbol);
       this.localStorage.setItem(this.key, JSON.stringify(data));
       this.changes$.next(data);
       return true;

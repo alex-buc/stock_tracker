@@ -15,7 +15,7 @@ export class SentimentStatisticsComponent implements OnInit {
   @Input() 
   symbol!:string;
 
-  public sentiments:any[] = [];
+  public sentiments:SentimentModel[] = [];
   constructor(private finnhubSentimentService:FinnhubSentimentService) { }
 
   ngOnInit(): void {
